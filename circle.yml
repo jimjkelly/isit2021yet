@@ -11,8 +11,8 @@ dependencies:
 test:
   override:
     - yarn test
-    - yarn lint
+deployment:
   production:
     branch: master
     commands:
-        - aws s3 sync dist s3://isit2021yet.com --delete --region us-west-2
+      - aws s3 sync build s3://isit2021yet.com --delete --region us-west-2
